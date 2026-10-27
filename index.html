@@ -55,7 +55,9 @@
         .video-tagline img { width: 24px; height: 24px; border-radius: 50%; border: 1px solid var(--luxury-gold); }
         .video-tagline span { color: #ffffff; font-family: var(--font-display); font-size: 9px; letter-spacing: 0.15em; text-shadow: 0px 1px 3px rgba(0,0,0,0.8); }
         .video-container { position: relative; width: 100%; aspect-ratio: 9 / 16; border-radius: 16px; overflow: hidden; background-color: #000000; }
-        .video-container iframe { width: 100%; height: 100%; object-fit: cover; }
+        
+        /* IFRAME DO YOUTUBE AJUSTADO */
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
 
         /* CHECKOUT / OFERTA CARD */
         .offer-section { max-width: 576px; margin: 0 auto 48px auto; }
@@ -95,4 +97,305 @@
         .bonus-icon { width: 40px; height: 40px; background-color: rgba(197, 168, 128, 0.1); color: var(--luxury-gold-dark); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px auto; }
         .bonus-icon svg { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 2; }
         .bonus-card h4 { font-size: 13px; font-weight: 700; color: var(--luxury-dark); margin-bottom: 8px; font-family: var(--font-display); }
-        .bonus-card p { font-size: 11px; color: #6b7280; line-height: 1.5
+        .bonus-card p { font-size: 11px; color: #6b7280; line-height: 1.5; margin-bottom: 12px; }
+        .bonus-value { font-size: 10px; font-weight: 700; color: #10b981; text-transform: uppercase; letter-spacing: 0.05em; background-color: rgba(16, 185, 129, 0.1); padding: 4px 8px; border-radius: 4px; display: inline-block; }
+
+        /* UPSELL SBM OS SECTION */
+        .upsell-title { text-align: center; max-width: 576px; margin: 0 auto 40px auto; border-top: 1px solid #f3f4f6; padding-top: 64px; }
+        .upsell-sub { font-size: 10px; letter-spacing: 0.2em; color: var(--luxury-gold); text-transform: uppercase; font-weight: 700; display: block; margin-bottom: 8px; }
+        .upsell-title h3 { font-family: var(--font-display); font-size: 24px; font-weight: 800; color: var(--luxury-dark); margin-bottom: 8px; }
+        .upsell-title p { font-size: 14px; color: #6b7280; }
+        .upsell-card { background-color: var(--luxury-bg-gray); border: 1px solid #e5e7eb; border-radius: 24px; padding: 32px; margin: 0 auto; max-width: 768px; position: relative; overflow: hidden; }
+        .upsell-grid { display: grid; grid-template-columns: 1; gap: 32px; align-items: center; }
+        @media (min-width: 768px) { .upsell-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+        .upsell-badge { background-color: rgba(197, 168, 128, 0.1); color: var(--luxury-gold-dark); font-size: 9px; font-weight: 700; padding: 4px 8px; border-radius: 4px; letter-spacing: 0.15em; }
+        .upsell-content h4 { font-family: var(--font-display); font-size: 20px; font-weight: 700; color: var(--luxury-dark); margin-bottom: 16px; margin-top: 16px; line-height: 1.3; }
+        .upsell-content p { font-size: 13px; color: #4b5563; line-height: 1.6; margin-bottom: 24px; }
+        
+        .app-preview { background-color: #ffffff; border-radius: 16px; border: 1px solid #e5e7eb; padding: 20px; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05); position: relative; }
+        .app-header { display: flex; justify-content: space-between; border-bottom: 1px solid #f3f4f6; padding-bottom: 12px; margin-bottom: 16px; }
+        .app-dots { display: flex; gap: 6px; }
+        .dot { width: 8px; height: 8px; border-radius: 50%; }
+        .dot.red { background-color: #f87171; } .dot.yellow { background-color: #facc15; } .dot.green { background-color: #4ade80; }
+        .app-title { font-size: 9px; font-family: var(--font-display); font-weight: 600; color: #9ca3af; letter-spacing: 0.1em; }
+        .app-item { background-color: var(--luxury-bg-gray); border-radius: 8px; padding: 8px 12px; display: flex; justify-content: space-between; margin-bottom: 12px; }
+        .app-item-left { font-size: 9px; font-weight: 500; font-family: monospace; }
+        .app-item-status { font-size: 9px; font-weight: 700; color: #059669; }
+        .progress-box { padding: 12px; background-color: rgba(250, 250, 250, 0.5); border-radius: 8px; border: 1px solid #f3f4f6; margin-bottom: 12px; }
+        .progress-label { display: flex; justify-content: space-between; font-size: 9px; color: #6b7280; margin-bottom: 4px; }
+        .progress-bg { width: 100%; background-color: #e5e7eb; height: 4px; border-radius: 9999px; overflow: hidden; }
+        .progress-fill { height: 100%; background-color: var(--luxury-gold); }
+        
+        .floating-badge { position: absolute; top: -12px; right: -12px; background-color: var(--luxury-dark); color: #ffffff; border: 2px solid var(--luxury-gold); font-size: 9px; padding: 4px 12px; border-radius: 9999px; font-family: var(--font-display); font-weight: 600; letter-spacing: 0.1em; }
+        
+        .upsell-footer { margin-top: 32px; padding-top: 24px; border-top: 1px solid #e5e7eb; display: flex; flex-direction: column; justify-content: space-between; align-items: center; gap: 16px; }
+        @media (min-width: 640px) { .upsell-footer { flex-direction: row; } }
+        .upsell-footer-text span { font-size: 11px; color: #9ca3af; text-transform: uppercase; font-family: monospace; display: block; }
+        .upsell-footer-text h5 { font-size: 14px; font-weight: 600; color: var(--luxury-dark); }
+        .upsell-btn { background-color: #ffffff; color: var(--luxury-dark); border: 1px solid var(--luxury-dark); padding: 12px 24px; border-radius: 8px; font-family: var(--font-display); font-weight: 700; font-size: 12px; text-decoration: none; text-transform: uppercase; letter-spacing: 0.1em; transition: background-color 0.2s; text-align: center; width: 100%; }
+        @media (min-width: 640px) { .upsell-btn { width: auto; } }
+
+        /* PROVAS SOCIAIS */
+        .testimonials { margin-top: 80px; }
+        .testimonials h3 { text-align: center; font-family: var(--font-display); font-size: 20px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--luxury-dark); margin-bottom: 40px; }
+        .testimonials-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
+        @media (min-width: 768px) { .testimonials-grid { grid-template-columns: repeat(2, 1fr); } }
+        .testimonial-card { background-color: var(--luxury-bg-gray); border: 1px solid #e5e7eb; padding: 24px; border-radius: 16px; position: relative; }
+        .testimonial-card p { font-style: italic; font-size: 14px; color: #4b5563; margin-bottom: 16px; line-height: 1.65; }
+        .testimonial-card span { font-size: 12px; font-weight: 600; color: var(--luxury-dark); }
+        .testimonial-stars { display: flex; gap: 4px; margin-bottom: 12px; }
+        .testimonial-stars svg { width: 14px; height: 14px; fill: #fbbf24; }
+
+        /* FOOTER */
+        footer { background-color: var(--luxury-bg-gray); padding: 48px 0; border-top: 1px solid #e5e7eb; font-size: 12px; color: #9ca3af; text-align: center; }
+        .footer-logo { display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 16px; }
+        .footer-logo img { width: 24px; height: 24px; border-radius: 50%; border: 1px solid var(--luxury-gold); }
+        .footer-logo span { font-family: var(--font-display); font-size: 14px; letter-spacing: 0.15em; color: var(--luxury-dark); font-weight: 700; }
+        footer p { max-width: 576px; margin: 0 auto 16px auto; line-height: 1.6; }
+        .footer-links { display: flex; justify-content: center; gap: 16px; font-size: 10px; text-transform: uppercase; font-weight: 500; letter-spacing: 0.05em; }
+        .footer-links a { color: #6b7280; text-decoration: none; }
+
+        /* ANIMATIONS */
+        @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: .5; transform: scale(1.15); } }
+    </style>
+</head>
+<body>
+
+    <div class="topbar">ACESSO IMEDIATO • PROTOCOLO BIOLÓGICO CONTRA A PROCRASTINAÇÃO</div>
+
+    <header>
+        <div class="container header-content">
+            <div class="logo-box">
+                <div class="logo-img-container">
+                    <img src="image_129.png" alt="Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <span class="logo-fallback" style="display: none;">OC</span>
+                </div>
+                <div class="logo-text">
+                    <h1>O CONFESSIONÁRIO</h1>
+                    <p>Neurociência & Alta Performance</p>
+                </div>
+            </div>
+            <div class="status-badge">
+                <span class="pulse-dot"></span>
+                <span style="font-size: 12px; color: #6b7280; font-weight: 500;">Inscrições abertas para o lote atual</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="container" style="padding-bottom: 96px;">
+        
+        <section class="hero text-center">
+            <span class="badge-premium">✨ O Único Método Baseado na Biologia Humana</span>
+            <h2>Seu cérebro não é preguiçoso.<br> Ele está apenas <span class="text-highlight">SABOTADO.</span></h2>
+            <p>Descubra o protocolo prático de 9 passos para desarmar o sequestro da amígdala, regular seus níveis de dopamina e forçar seu corpo a agir — sem precisar de motivação barata.</p>
+        </section>
+
+        <!-- VIDEO VSL (YOUTUBE INTEGRATION) -->
+        <section class="vsl-section">
+            <div class="video-wrapper">
+                <div class="video-tagline">
+                    <img src="image_129.png" alt="Icon" onerror="this.style.display='none'">
+                    <span>SBM PROTOCOLO</span>
+                </div>
+                <div class="video-container">
+                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/IU836yzh2nA?si=L7R4jB1jL4jL4jL4&amp;controls=0&amp;rel=0&amp;modestbranding=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- OFERTA PRINCIPAL -->
+        <section class="offer-section text-center">
+            <div class="offer-card">
+                
+                <div class="stars-review">
+                    <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <span>4.9/5 (Mais de 400 pessoas destravadas)</span>
+                </div>
+
+                <div class="offer-header">
+                    <span class="offer-tag">Lote Especial de Lançamento</span>
+                </div>
+                
+                <div class="pricing">
+                    <span class="price-old">De R$ 197,00</span>
+                    <span class="price-current">R$ 37,00</span>
+                    <span class="price-installment">ou 4x de R$ 9,83</span>
+                </div>
+
+                <ul class="benefits-list">
+                    <li>
+                        <svg fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+                        <span>O e-book digital completo <strong>Protocolo SBM</strong>.</span>
+                    </li>
+                    <li>
+                        <svg fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+                        <span>Método prático de 9 passos à prova de sabotagem.</span>
+                    </li>
+                    <li>
+                        <svg fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+                        <span>O direito de destravar sua mente e voltar a produzir.</span>
+                    </li>
+                </ul>
+
+                <a href="https://pay.kiwify.com.br/SEULINKAQUI" class="cta-btn">
+                    Quero destravar minha mente agora
+                    <svg style="width: 16px; height: 16px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                </a>
+                
+                <!-- GARANTIA -->
+                <div class="guarantee-box">
+                    <svg viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                    <div class="guarantee-text">
+                        <h6>Garantia Incondicional de 7 Dias</h6>
+                        <p>Se você ler o material, aplicar as ferramentas e não sentir uma mudança imediata no seu nível de foco, devolvemos 100% do seu dinheiro. Sem perguntas. <strong>Risco Zero.</strong></p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SEÇÃO DE BRINDES -->
+        <section class="bonuses-section">
+            <div class="bonuses-header">
+                <h3>Completando sua inscrição hoje, você garante 3 Brindes</h3>
+                <p>Acionados imediatamente após a compra.</p>
+            </div>
+            
+            <div class="bonus-grid">
+                <div class="bonus-card">
+                    <div class="bonus-icon">
+                        <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                    </div>
+                    <h4>Comunidade VIP</h4>
+                    <p>Acesso ao nosso grupo fechado. Você não vai aplicar o protocolo sozinho.</p>
+                    <span class="bonus-value">Valor: R$ 97 (Hoje: Grátis)</span>
+                </div>
+                <div class="bonus-card">
+                    <div class="bonus-icon">
+                        <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                    </div>
+                    <h4>Mapa Mental SBM</h4>
+                    <p>Um checklist visual de 1 página para pendurar no seu escritório e não esquecer o método.</p>
+                    <span class="bonus-value">Valor: R$ 27 (Hoje: Grátis)</span>
+                </div>
+                <div class="bonus-card">
+                    <div class="bonus-icon">
+                        <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
+                    </div>
+                    <h4>Áudio de Reprogramação</h4>
+                    <p>Exercício guiado de 5 minutos para ouvir sempre que a sua amígdala travar antes de trabalhar.</p>
+                    <span class="bonus-value">Valor: R$ 47 (Hoje: Grátis)</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- UPSELL PREMIUM (SBM OS) -->
+        <section>
+            <div class="upsell-title">
+                <span class="upsell-sub">UPGRADE EXCLUSIVO</span>
+                <h3>Adicione o SBM Operating System</h3>
+                <p>A ferramenta que transforma a teoria do Protocolo em execução imediata e automática.</p>
+            </div>
+            <div class="upsell-card">
+                <div style="position: absolute; right: -80px; bottom: -80px; width: 240px; height: 240px; background-color: rgba(6, 182, 212, 0.05); border-radius: 50%; filter: blur(40px); pointer-events: none;"></div>
+                <div class="upsell-grid">
+                    <div class="upsell-content">
+                        <div class="upsell-badge-row"><span class="upsell-badge">APP / TEMPLATE SBM OS</span></div>
+                        <h4>Sua mente precisa de um cérebro auxiliar.</h4>
+                        <p>No SBM OS, você não precisa pensar para se organizar. Nós criamos o sistema digital exato para esvaziar a ansiedade e isolar a sua única prioridade diária sem fricção.</p>
+                        <div style="display: flex; flex-direction: column; gap: 12px;">
+                            <div style="display: flex; gap: 8px; font-size: 12px; color: #6b7280;">
+                                <strong style="color: var(--luxury-gold);">01.</strong> <span><strong>Rastreador:</strong> Monitore hábitos sem forçar a mente.</span>
+                            </div>
+                            <div style="display: flex; gap: 8px; font-size: 12px; color: #6b7280;">
+                                <strong style="color: var(--luxury-gold);">02.</strong> <span><strong>Brain Dump:</strong> Alivie o excesso de ideias na hora.</span>
+                            </div>
+                            <div style="display: flex; gap: 8px; font-size: 12px; color: #6b7280;">
+                                <strong style="color: var(--luxury-gold);">03.</strong> <span><strong>Cofre de Foco:</strong> Execute sem paralisia de escolha.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="app-preview">
+                        <div class="app-header">
+                            <div class="app-dots"><div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div></div>
+                            <span class="app-title">SBM_OS_DASHBOARD</span>
+                        </div>
+                        <div>
+                            <div class="app-item"><span class="app-item-left">DOPAMINE_METRICS.LOG</span><span class="app-item-status">OTIMIZADO</span></div>
+                            <div class="progress-box">
+                                <div class="progress-label"><span>Capacidade de Foco Profundo</span><strong style="color: var(--luxury-gold-dark);">89%</strong></div>
+                                <div class="progress-bg"><div class="progress-fill" style="width: 89%;"></div></div>
+                            </div>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+                                <div style="background-color: var(--luxury-dark); color: white; padding: 8px; border-radius: 6px; text-align: center; font-size: 8px; text-transform: uppercase;">
+                                    <span style="display: block; color: var(--luxury-gold);">Brain Dump</span><span>Liberar</span>
+                                </div>
+                                <div style="border: 1px solid rgba(197, 168, 128, 0.3); padding: 8px; border-radius: 6px; text-align: center; font-size: 8px; text-transform: uppercase; font-weight: 600;">
+                                    <span style="display: block; color: var(--luxury-gold-dark);">Alvo Único</span><span>Deep Work</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="floating-badge">+ R$ 97,00 Único</div>
+                    </div>
+                </div>
+                <div class="upsell-footer">
+                    <div style="text-align: left;">
+                        <span style="font-size: 11px; color: #9ca3af; text-transform: uppercase; font-family: monospace;">Adição no Checkout</span>
+                        <h5 style="font-size: 14px; font-weight: 600; color: var(--luxury-dark);">Adicione em 1 Clique na hora de finalizar o seu SBM</h5>
+                    </div>
+                    <a href="https://pay.kiwify.com.br/SEULINKAQUI?upsell=true" class="upsell-btn">Quero o Sistema Completo</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROVAS SOCIAIS -->
+        <section class="testimonials">
+            <h3>O que estão dizendo d'O Confessionário</h3>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    </div>
+                    <p>"A maioria dos métodos foca em motivação barata, o que nunca funcionou pra mim. Quando entendi o 'sequestro da amígdala', parei de me culpar e comecei a fazer."</p>
+                    <span>Renato S., Curitiba PR</span>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    </div>
+                    <p>"Eu era o rei do Notion, passava madrugadas organizando e não executava nada. A 'Regra do Alvo Único' me forçou a executar de verdade. Bizarro."</p>
+                    <span>Gabriel M., São Paulo SP</span>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-logo">
+                <img src="image_129.png" alt="Icon" onerror="this.style.display='none'">
+                <span>O CONFESSIONÁRIO</span>
+            </div>
+            <p>O Confessionário &copy; 2026. Todos os direitos reservados.</p>
+            <p style="font-size: 11px;">Este produto não substitui o aconselhamento médico ou psicológico profissional. Os resultados podem variar de acordo com a aplicação prática do aluno.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
